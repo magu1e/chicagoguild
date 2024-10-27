@@ -11,6 +11,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "bootstrap": "^5.3.3",
+    "firebase": "^11.0.1",
+    "punycode": "^2.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -25,6 +29,7 @@
     "eslint-plugin-react-refresh": "^0.4.13",
     "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
+    "sass-embedded": "^1.80.4",
     "vite": "^5.4.9"
   }
 }

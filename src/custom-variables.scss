@@ -1,0 +1,53 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+//Reemplaza colores originarios de bs
+
+//Colors
+$primary: #30f06a;
+$secondary: #071b14;
+
+$customColors : (
+  "primary": $primary,
+  "secondary": $secondary,
+);
+$theme-colors: map-merge($theme-colors, $customColors);
+
+
+//General
+$xs: map-get($grid-breakpoints, xs);
+$sm: map-get($grid-breakpoints, sm);
+$md: map-get($grid-breakpoints, md);
+$lg: map-get($grid-breakpoints, lg);
+$xl: map-get($grid-breakpoints, xl);
+
+$container-padding-x: 10rem;
+
+$body-color: $white;
+$body-bg: $secondary;
+$body-bg-dark: $secondary;
+$body-secondary-bg-dark: $secondary;
+
+//Navbar 
+$navbar-padding-y: $spacer * 4;
+$navbar-nav-link-padding-x: .8rem;
+
+//Text
+$font-family-sans-serif: 'Inter', sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1.2rem;
+
+//Buttons
+$btn-font-size: $font-size-base;
+
+//Tooltip
+$tooltip-color: white;
+ 
+
+//Cards
+$card-spacer-y: 2rem;
+$card-spacer-x: 2rem;
+$card-border-color: none;
+$card-border-radius: $border-radius-xxl;
+//$card-box-shadow: 0px 100px 181px 0px rgba(0, 0, 0, 0.07), 0px 64.815px 106.002px 0px rgba(0, 0, 0, 0.05), 0px 38.519px 57.652px 0px rgba(0, 0, 0, 0.04), 0px 20px 29.413px 0px rgba(0, 0, 0, 0.04), 0px 8.148px 14.748px 0px rgba(0, 0, 0, 0.03), 0px 1.852px 7.123px 0px rgba(0, 0, 0, 0.02); // no lo toma

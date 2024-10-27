@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; 
+import "./styles.scss";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Tooltip } from "bootstrap"; 
+import Header from "./Header.jsx";
+import Bosses from "./Bosses.jsx";
+
+
+const App = () => {
+
+ useEffect(() => {
+    // Selecciona los elementos que deben tener el tooltip personalizado
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => {
+      const tooltip = new Tooltip(tooltipTriggerEl);
+
+      // Agrega una clase personalizada cuando el tooltip aparece
+      tooltipTriggerEl.addEventListener('show.bs.tooltip', () => {
+        const tooltipElement = document.querySelector('.tooltip.show');
+        tooltipElement && tooltipElement.classList.add('custom-tooltip');
+      });
+
+      return tooltip;
+    });
+
+    return () => {
+      tooltipList.forEach((tooltip) => tooltip.dispose());
+    };
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div data-bs-theme="dark">
+        <Header />
+        <Bosses />
+        <footer className="footer">
+          <div className="container-fluid py-5">
+            <h5>Nueva Chicago Guild</h5>
+            <p>Unite al discord o sos pollo salu2</p>
+            <a href="">
+              <img src="" alt="" />
+            </a>
+          </div>
+        </footer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

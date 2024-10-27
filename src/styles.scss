@@ -1,0 +1,79 @@
+// CUSTOM VARIABLES
+@import "./custom-variables.scss";
+// BOOTSTRAP 5
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+//FONTS
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+//ICONS
+@import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded");
+
+.boss {
+  position: relative;
+  &:after {
+    @extend .rounded;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 63%, rgba(0,0,0,1) 100%);
+  }
+  .boss-img {
+    @extend .rounded;
+    object-fit: cover;
+    width: 100%;
+    min-height: 500px;
+  }
+  .boss-info {
+    position: absolute;
+    z-index: 2;
+    padding: 1rem;
+    bottom: 0;
+    .boss-drops {
+      @extend .center;
+      img {
+        margin-right: .3rem;
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+}
+
+.custom-tooltip .tooltip-inner {
+  min-width: max-content !important;
+  padding: 0 !important;
+  background-color: red !important;
+  color: white !important;
+}
+
+.custom-tooltip .tooltip-arrow::before {
+  background-color: red !important; /* Color de la flecha */
+}
+
+.user-img {
+  @extend .rounded-circle, .mx-2;
+  width: 40px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon {
+  @extend .rounded-circle, .center;
+  width: 45px;
+  height: 45px;
+}
+
+
+.footer {
+  @extend .bg-black;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
