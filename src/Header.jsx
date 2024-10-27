@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 import Login from "./Login.jsx";
-import { auth } from "../firebase";
+import { auth } from "./firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 const Header = () => {
